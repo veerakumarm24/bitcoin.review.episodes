@@ -1,15 +1,17 @@
 ---
 layout: post
 title:  "Bitcoin.Review Podcast Ep 02 - WIP"
-date:   2022-07-15 00:00:00 -0500
+date:   2022-07-15 15:40:00 -0500
 categories: podcast
-author: NVK & TBD
+author: NVK & ODELL & MOON
 ---
 
 
 <b>Hello and welcome to Bitcoin.Review Episode 02!</b>
 
 I Scratched my own itch with Episode 01, so this will keep going as my best efforts place to talk about Bitcoin Project software updates and some other commentary that I find interesting or noteworthy to me. I also would like to invite you to send Bitcoin related questions, just go to bitcoin.review and click submit story at the top right.
+
+This week I have Justin Moon and Matt Odell helping me read the list.
 
 
 <a href="https://anchor.fm/bitcoinreview" class="btn btn-primary btn-large" style="background:#f7931a;"> Listen to the Episodes </a>
@@ -18,18 +20,108 @@ I Scratched my own itch with Episode 01, so this will keep going as my best effo
 
 [Learn how this started on Episode 01](https://bitcoin.review/podcast/2022/06/27/Episode-01.html)
 
-<hr>
+# Episode 02
 
-#### Software Releases and Project Updates
+### Software Releases and Project Updates
 
-- WIP
+- [BTCPayServer 1.6](https://twitter.com/BtcpayServer/status/1545444707169636353) => 1.6.1
+    - Vulnerability disclosed via CVE and fixed
+    - Lightning dashboard ⚡️
+    - Invoice receipts 🧾
+    - Automatic emails for events 📧
+    - LNURL-withdraw support for payouts(refunds)  🔄
+    - Joomla Integration, NFC support plugin and mooore!
+- COLDCARD Mk4 5.0.5 & [BIP85 Password extension](https://github.com/Coldcard/firmware/blob/master/docs/bip85-passwords.md)
+- [Electrum Private Server 0.2.4 by Chris Belcher](https://github.com/chris-belcher/electrum-personal-server/blob/master/release-notes)
+    - Fixed crash caused by deprecated RPC in Bitcoin Core 23.0
+    - Added signet support 
+- [CK tap protocol 1.0.5](https://pypi.org/project/coinkite-tap-protocol/)
+    - add ability to derive non hardened derivations with library (not possible with card - card can only derive hardened path components)
+    - 'sign_digest' accepts new 'fullpath' parameter where full bip 32 string path can be passed
+    - support for SATSCHIP v1.0.0 product
+    - shell output for backup command improved
+    - adds card.product_name string
+- CK-TAP React Native Open Library built by the Hexa wallet team claimed the bounty [released](https://github.com/coinkite/cktap-protocol-react-native)
+- Coinkite Cards 1.0.2 released (SATSCHIP, TAPSIGNER & SATSCARD)
+    - Bug fixes and getting ready to release
+    - Satschip gallery https://satschip.com/gallery and NFC reader + CLI program for artists to submit.
+- [Zeus v0.6.5 release](https://twitter.com/ZeusLN/status/1543032946801537025)
+    -Send to Bech32m (Taproot) addresses
+    -Receive to P2TR (Taproot) addresses (LND v0.15+ only)
+    -Enhanced Android NFC support
+    -Much improved Spark support
+- Blockstream Green QT [Release 1.1.2](https://github.com/Blockstream/green_qt/releases/tag/release_1.1.2)
+    - Changed; Refactor json conversion
+    - Fixed; utf8 memo, Fix for assets with no ticker or issuer
+- Sparrow [1.6.5](https://github.com/sparrowwallet/sparrow/releases/tag/1.6.5)
+    - Add Ledger Nano S Plus support
+    - Allow watch-only keystores to enable signing from matching connected hardware wallets
+    - Import gap limit from Electrum wallets
+    - And lots of bug fixes
+ - Blue Wallet [v6.3.1](https://github.com/BlueWallet/BlueWallet/releases/tag/v6.3.1)
+     - FIX: Lightning Wallets would fail under Tor
+     - 6.3.0 
+         - Passphrase support on Multisig
+         - Import BIP39 multi language
+         - LNurl-Auth (Login with Lightning)
+- Start9 [EmbassyOS 0.3.1](https://twitter.com/start9labs/status/1546541545557528577)
+    - new password reset flow
+    -selective backups
+    -Javascript execution environment
+    -library to import your Embassy package projects
+    -ability to side load packages directly from your Embassy dashboard
+    -refactors, bug fixes, performance improvements
+     - [A Nice guide for connecting Bisq to Start9](https://twitter.com/grassfedbitcoin/status/1546669119461675008)
 
-#### Coinkite Updates
+#### Noteworthy
 
-- WIP
+- My buddy Marshall and some of his friends in China made a man in the middle overclocking board for the s19 - [Pleb OC by OGBTC](https://twitter.com/OGBTC/status/1543259142684610563) and [here] - The video in the tweet shows a 95TH, model going to 111th, No voided warranty. No flashing firmware. Plug and play (https://twitter.com/ogbtc/status/1543062468515209218?s=21) 
+- Nunchuk/TAPSIGNER NFC bitcoin co-signing demo https://twitter.com/nvk/status/1544842230350880769
+- Authenticate into the Private Club and use SATSCARD behind the bar as creditless collateral for your tab.  [Pirate Memember by Mike Kelly](https://twitter.com/NicerInPerson/status/1539319022273314816) and new [demo here](https://twitter.com/NicerInPerson/status/1546507986671116289)
+- [LightningNetworkPCB](https://github.com/ccadic/LightningNetworkPCB) by [sulfuroid](https://twitter.com/sulfuroid/status/1544649392480714752) 
+- [Spacechain by Ruben](https://twitter.com/SomsenRuben/status/1519009818425671684) - Permissionless one-way pegged [#Bitcoin](https://twitter.com/hashtag/Bitcoin?src=hashtag_click) sidechains – all value goes to BTC holders, all fees go to BTC miners. Stablecoins, NFTs, fed. pegs, low-value payments, DNS, and more.
+- [Silent Payment](https://bitcoinmagazine.com/technical/silent-payments-make-bitcoin-more-private) and [here](https://bitcoinmagazine.com/technical/improving-bitcoin-privacy-with-silent-payments) and [github](https://gist.github.com/RubenSomsen/c43b79517e7cb701ebf77eec6dbb46b8)
+- Justin; Fedimint is a framework for building federated bitcoin applications. The first such application is a Chaumian mint that connects to the lightning network; a private, custodial lightning wallet. We've been able to send lightning payments for a while, but this week we https://github.com/fedimint/minimint/pull/174 as well. Learn more about Fedimint in our Discord https://chat.fedimint.org/ 
+- liquid Fuji Money https://fuji.money - Borrow bitcoin-backed stablecoins, synthetic stocks & bonds without intermediaries.
+- Unchained has a new trading desk (buying bitcoin exclusively) expansion. Buy bitcoin directly to cold storage vaults and effect final settlement faster than anywhere in the world. You can do it in app now, and we’re available in 24 states. bitcoin IRA product has been really growing and our trading product is available in Tx and FL with 5k minimums. That’s a pilot we’re hoping to open up in September to 30+ states. 
+- [bitcoin-s merged taproot support](https://github.com/bitcoin-s/bitcoin-s/pull/3769)
+- They made it possible for other apps to integrate with Casa so that they can provide functionality to Casa users; initial functionality allows the integrator to view the wallet balance or get a deposit address https://blog.keys.casa/announcing-api-series-a/
+- [Robosats](https://learn.robosats.com/) - [A Simple and Private Lightning P2P Exchange](https://learn.robosats.com/)
 
-#### Bitcoin Optech Newsletter
 
--WIP
+### Bitcoin Optech Newsletter
 
+- [208](https://bitcoinops.org/en/newsletters/2022/07/13/)
+    - Half aggregation of BIP340 signatures: Jonas Nick [posted](https://lists.linuxfoundation.org/pipermail/bitcoin-dev/2022-July/020662.html) to the Bitcoin-Dev mailing list a [draft BIP](https://github.com/ElementsProject/cross-input-aggregation/blob/master/half-aggregation.mediawiki) and [blog post](https://blog.blockstream.com/half-aggregation-of-bip-340-signatures/) about half aggregation of Bitcoin’s [schnorr signatures](https://bitcoinops.org/en/topics/schnorr-signatures/). As mentioned in the blog post, the proposal “allows aggregating multiple schnorr signatures into a single signature that is about half as long as the sum of the individual signatures. Importantly, this scheme is non-interactive, which means that a set of signatures can be half-aggregated by a third party without any involvement from the signers.” 
+        - Blockstream research - [BIP for non-interactive half-aggregation of BIP 340 Schnorr signatures.](https://blog.blockstream.com/half-aggregation-of-bip-340-signatures/) and [github](https://github.com/ElementsProject/cross-input-aggregation/blob/master/half-aggregation.mediawiki)
+        - A [separate document](https://github.com/ElementsProject/cross-input-aggregation) provides examples of how half aggregation could benefit the operators of Bitcoin and LN nodes, plus several concerns that would need to be considered in the design of a soft fork adding half aggregation to the consensus protocol.
+- [207](https://bitcoinops.org/en/newsletters/2022/07/06/)
+    - Long-term block reward funding 
+    - [Bitcoin Core #24836](https://github.com/bitcoin/bitcoin/issues/24836) adds a regtest-only RPC, submitpackage, to help L2 protocol and application developers who intend to use [package relay](https://bitcoinops.org/en/topics/package-relay/) in the future test their transactions against the Bitcoin Core default package policy. The current policy is outlined [here](https://github.com/bitcoin/bitcoin/blob/09f32cffa6c3e8b2d77281a5983ffe8f482a5945/doc/policy/packages.md). This RPC can also be used to test future additions and changes, such as the proposed package RBF rules.
+    - [Bitcoin Core #22558](https://github.com/bitcoin/bitcoin/issues/22558) adds support for [BIP371](https://github.com/bitcoin/bips/blob/master/bip-0371.mediawiki)’s additional [PSBT](https://bitcoinops.org/en/topics/psbt/) fields (see [Newsletter #155](https://bitcoinops.org/en/newsletters/2021/06/30/#psbt-extensions-for-taproot)) for [taproot](https://bitcoinops.org/en/topics/taproot/).
+    - [BDK #611](https://github.com/bitcoindevkit/bdk/issues/611) begins setting the nLockTime of new transactions to the height of the most recent block by default, enabling [anti fee sniping](https://bitcoinops.org/en/topics/fee-sniping/).
+- [206](https://bitcoinops.org/en/newsletters/2022/06/29/)
+    - [What is the largest multisig quorum currently possible?](https://bitcoin.stackexchange.com/a/114048) Andrew Chow lists the different possible multisig types (bare script, P2SH, P2WSH, P2TR, P2TR + [MuSig](https://bitcoinops.org/en/topics/musig/)) and the multisig quorum restrictions for each.
+
+
+
+### Bitcoin Events
+
+- AB/DC Bitcoin design meetup in Austin https://twitter.com/austinbtcdesign/status/1544766173249683456
+- Bitcoin Conference in Amsterdam
+- Adopting Bitcoin in El Salvador
+- BTCAzores Unconference in the Azores by Kevin (@kloaec)
+- TAAB Conf
+- Riga Bitcoin Conf
+
+### Other Updates if I still have time
+
+-  Why CBDCs wont come. [Porkopolis Economics by Matthew Mezinskis ](https://twitter.com/crypto_voices/status/1544319235031277569) ![](https://pbs.twimg.com/media/FW6GKGmXwAMapr0.jpg)
+
+
+### Get in touch with the pod
+
+- twitter.com/BitcoinReviewHQ
+- Telegram https://t.me/BitcoinReviewPod
+- Email bitcoinreview@coinkite.com
 
